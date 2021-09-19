@@ -1,0 +1,1 @@
+document.body.insertAdjacentHTML("afterbegin", `<div class="container"><h1 class="header">MedZona</h1><button class="entrance">Log in</button></div><div class="info-card"></div>`);
