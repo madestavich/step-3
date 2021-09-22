@@ -17,11 +17,15 @@ document.body.innerHTML = `<header class="page-header">
 
 //* main code
 
+const token = "de010fb7-f827-4877-938e-9185a060e606"
 function clickHandler(e) {
   if (e.target.id === "login") {
+  
     let loginModal = new Modal();
     loginModal.renderModal();
     document.body.prepend(loginModal.modalBackground);
+    loginModal.modalBackground.hidden = true;
+    loginModal.listener()
   } else if (
     e.target.classList.contains("modal-background") ||
     e.target.classList.contains("modal-close")
