@@ -1,5 +1,5 @@
 //! imports
-
+import Login from "./modules/login.js";
 import Modal from "./modules/modal.js";
 
 //? innerHTML
@@ -24,8 +24,12 @@ function clickHandler(e) {
     let loginModal = new Modal();
     loginModal.renderModal();
     document.body.prepend(loginModal.modalBackground);
-    loginModal.modalBackground.hidden = true;
-    loginModal.listener()
+
+    let loginForm = new Login()
+    loginForm.renderLoginForm()
+    loginModal.modalBody.prepend(loginForm.inputWrapper)
+  
+    loginForm.listener()
   } else if (
     e.target.classList.contains("modal-background") ||
     e.target.classList.contains("modal-close")
